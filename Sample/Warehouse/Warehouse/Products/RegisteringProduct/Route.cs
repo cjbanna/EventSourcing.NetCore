@@ -15,7 +15,7 @@ internal static class Route
 {
     internal static IEndpointRouteBuilder UseRegisterProductEndpoint(this IEndpointRouteBuilder endpoints)
     {
-        endpoints.MapPost("api/products/", async context =>
+        endpoints.MapPost("/api/products/", async context =>
         {
             var (sku, name, description) = await context.FromBody<RegisterProductRequest>();
             var productId = Guid.NewGuid();
